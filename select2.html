@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select 2 Example Code</title>
+
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="placeholders.jquery.min.js"></script>
+<script type="text/javascript" src="js/select2.full.js"></script>
+<link href="css/select2.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+<select id="multiselect" class="js-example-basic-multiple js-states form-control" multiple="multiple">
+	<option value='go'>Go</option>
+	<option value='r'>R</option>
+	<option value='cpp'>CPP</option>
+	<option value='java'>JAVA</option>
+	<option value='php'>PHP</option>
+	<option value='css'>CSS</option>
+	<option value='html'>HTML</option>
+	<option value='python'>PYTHON</option>
+	<option value='perl'>PERL</option>
+</select>
+<button onclick="set_value(); false;">set</button>
+<button onclick="show_value(); false;">show</button>
+<script type="text/javascript">
+
+$(".js-example-basic-multiple").select2();
+
+function set_value(){
+	$(".js-example-basic-multiple").val(["python", "r"]).trigger("change");
+}
+function show_value(){
+	console.log($("#multiselect").val());
+}
+</script>
+
+</body>
+
+</html> 
+
